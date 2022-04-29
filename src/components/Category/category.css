@@ -1,0 +1,23 @@
+.quiz-category-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.quiz-category {
+    box-shadow: 0 0 5px green;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.quiz-image img {
+    height: 20rem;
+    width: 30rem;
+    border: 10px;
+}
+
+.quiz-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 5rem;
+}
