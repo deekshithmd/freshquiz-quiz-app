@@ -11,7 +11,7 @@ export const Navigation = () => {
             alt="logo"
           />
         </Link>
-        <span className="brand-text">FreshView</span>
+        <span className="brand-text">FreshQuiz</span>
       </section>
       <section className="search-item">
         <div className="input search-field outlined ">

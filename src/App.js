@@ -8,6 +8,8 @@ import {
   Result,
   Rules,
   Category,
+  Error,
+  Answers
 } from "../src/components";
 //import Mockman from "mockman-js";
 
@@ -21,6 +23,8 @@ function App() {
         <Route path="/rules" element={<Rules />} />
         <Route path="/result" element={<Result />} />
         <Route path="/category" element={<Category />} />
+        <Route path="/answers" element={<Answers/>}/>
+        <Route path="*" element={<Error/>}/>
       </Routes>
       <Footer />
     </div>
