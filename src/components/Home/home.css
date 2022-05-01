@@ -1,14 +1,11 @@
 .main{
-    min-height: 70vh;
+    min-height: 80vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    /* background-image: url("https://assets.nrdc.org/sites/default/files/styles/full_content--retina/public/media-uploads/puffer_pond_assabet_river_nwr_photo_credit_jay_beeler_cropped.jpg?itok=d9-5mdFV");
-    background-size:cover;
-    background-repeat: no-repeat; */
 }
 
 .heading{
