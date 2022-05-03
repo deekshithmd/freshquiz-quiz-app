@@ -7,9 +7,11 @@ import { v4 as uuid } from "uuid";
 
 export const quizzes = [
   {
-    _id: "3fe39675-140b-4075-82f3-949a4dc95d18",
-    title: "You Can WIN",
-    totalScore: 20,
+    _id: uuid(),
+    id: "1",
+    title: "Poultry Farming Quiz",
+    totalScore: 25,
+    catergoryName: "Poultry Farming",
     mcqs: [
       {
         _id: "dddcd7a2-a479-482e-ae82-d55e2468534d",
@@ -30,12 +32,14 @@ export const quizzes = [
         answer: "Attachment Issues",
       },
     ],
-    catergoryName: "TV Show",
+    
   },
   {
-    _id: "3fe39675-140b-4075-82f3-949a4dc95d18",
-    title: "You Can WIN",
-    totalScore: 20,
+    _id: uuid(),
+    id: "2",
+    title: "Dairy Farming Quiz",
+    totalScore: 25,
+    catergoryName: "Dairy Farming",
     mcqs: [
       {
         _id: "dddcd7a2-a479-482e-ae82-d55e2468534d",
@@ -56,6 +60,6 @@ export const quizzes = [
         answer: "Attachment Issues",
       },
     ],
-    catergoryName: "TV Show",
+    
   },
 ];

@@ -1,7 +1,9 @@
 .question-container {
     box-shadow: 0 0 10px var(--primary-color);
     padding: 10px;
-    min-width: 40rem;
+    max-width: 40rem;
+    word-wrap:normal;
+    text-align: left;
 }
 
 .question-header {
@@ -19,6 +21,11 @@
     width: 100%;
     display: flex;
     align-items: center;
+}
+
+.option label{
+display: flex;
+align-items: center;
 }
 
 .option-hover:hover {

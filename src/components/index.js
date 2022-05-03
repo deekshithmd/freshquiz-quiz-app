@@ -7,6 +7,7 @@ import { Result } from "./Result/Result";
 import { Category } from "./Category/Category";
 import { Error } from "./Error/Error";
 import { Answers } from "./Answers/Answers";
+import { Loader } from "./Loader/Loader";
 
 export {
   Navigation,
@@ -18,4 +19,5 @@ export {
   Category,
   Error,
   Answers,
+  Loader,
 };
