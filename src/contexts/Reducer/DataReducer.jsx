@@ -6,6 +6,16 @@ export const DataReducer = (state, action) => {
       return { ...state, categories: action.payload };
     case "SELECTED_QUIZ":
       return { ...state, selectedQuiz: action.payload };
+    case "MARKED_ANSWER":
+      return {
+        ...state,
+        markedAnswers: [...state.markedAnswers, action.payload],
+      };
+    case "CORRECT_ANSWER":
+      return {
+        ...state,
+        correctAnswers: [...state.correctAnswers, action.payload],
+      };
     default:
       return state;
   }

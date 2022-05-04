@@ -1,6 +1,22 @@
+.start{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 4px solid var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
 .question-container {
     box-shadow: 0 0 10px var(--primary-color);
     padding: 10px;
+    min-width: 40rem;
     max-width: 40rem;
     word-wrap:normal;
     text-align: left;

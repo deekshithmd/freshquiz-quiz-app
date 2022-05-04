@@ -1,9 +1,22 @@
 import "./rules.css";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useData } from "../../contexts";
+import { useUserActions } from "../../hooks";
 export const Rules = () => {
+  const navigate = useNavigate();
   const { categoryId } = useParams();
   const { data } = useData();
+  const { getSelectedQuiz } = useUserActions();
+  const loadQuiz = () => {
+    data.allQuiz &&
+      data.allQuiz.map((quiz) => {
+        if (quiz.id === categoryId) {
+          getSelectedQuiz(quiz._id);
+        }
+      });
+    navigate(`/quiz/${categoryId}`);
+  };
+
   return (
     <div className="main">
       {data.categories &&
@@ -29,11 +42,12 @@ export const Rules = () => {
                     </li>
                   </ol>
                 </div>
-                <Link to={`/quiz/${categoryId}`}>
-                  <button className="btn btn-solid-primary">
-                    Let's begin the Quiz...
-                  </button>
-                </Link>
+                <button
+                  className="btn btn-solid-primary"
+                  onClick={() => loadQuiz()}
+                >
+                  Let's begin the Quiz...
+                </button>
               </div>
             )
           );

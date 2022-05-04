@@ -16,7 +16,7 @@ export const Category = () => {
                 key={category._id}
               >
                 <div className="category-image">
-                  <img src={category.image} alt="water" />
+                  <img src={category.image} alt={category.categoryName} />
                 </div>
                 <div className="category-info">
                   <h3 className="l-h-0">{category.categoryName}</h3>

@@ -8,6 +8,8 @@ const DataProvider = ({ children }) => {
     allQuiz: [],
     categories: [],
     selectedQuiz: [],
+    markedAnswers: [],
+    correctAnswers: [],
   });
 
   return (

@@ -9,6 +9,15 @@ export const categories = [
   {
     _id: uuid(),
     id: "1",
+    categoryName: "Dairy Farming Quiz",
+    description: "Play this quiz if you know well about dairy farming",
+    questions: "5",
+    image:
+      "https://file.removal.ai/preview/tmp-627280ccf1817.png",
+  },
+  {
+    _id: uuid(),
+    id: "2",
     categoryName: "Poultry Farming Quiz",
     description: "Play this quiz if you know well about poultry farming",
     questions: "5",
@@ -17,21 +26,12 @@ export const categories = [
   },
   {
     _id: uuid(),
-    id: "2",
-    categoryName: "Dairy Farming Quiz",
-    description: "Play this quiz if you know well about dairy farming",
-    questions: "5",
-    image:
-      "https://static9.depositphotos.com/1052036/1116/v/600/depositphotos_11165090-stock-illustration-dairy-farm.jpg",
-  },
-  {
-    _id: uuid(),
     id: "3",
     categoryName: "Fish Farming Quiz",
     description: "Play this quiz if you know well about fish farming",
     questions: "5",
     image:
-      "https://us.123rf.com/450wm/ylivdesign/ylivdesign2006/ylivdesign200602338/149522148-fish-farm-pool-icon-isometric-style.jpg?ver=6",
+      "https://o.remove.bg/downloads/4a78d1d2-b126-49a5-9020-7180919bf2fb/149522148-fish-farm-pool-icon-isometric-style-removebg-preview.png",
   },
   {
     _id: uuid(),
