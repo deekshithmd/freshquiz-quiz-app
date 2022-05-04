@@ -15,7 +15,7 @@
 
 .question-container {
     box-shadow: 0 0 10px var(--primary-color);
-    padding: 10px;
+    padding: 1rem;
     min-width: 40rem;
     max-width: 40rem;
     word-wrap:normal;
@@ -56,8 +56,8 @@ align-items: center;
 
 input[type="radio"] {
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     border: 2px solid var(--primary-color);
     border-radius: 50%;
     background-clip: content-box;

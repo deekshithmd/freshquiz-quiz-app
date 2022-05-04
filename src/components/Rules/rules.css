@@ -4,6 +4,7 @@
     justify-content: space-around;
     align-items: center;
 }
+
 ol>li::marker{
     font-weight: bold;
 }
@@ -13,7 +14,7 @@ ol>li::marker{
     flex-direction: column;
     justify-content: space-evenly;
     padding: 1rem;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px var(--border-black);
     min-height: 35rem;
 }
 

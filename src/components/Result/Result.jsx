@@ -6,9 +6,6 @@ export const Result = () => {
   const { data } = useData();
   const navigate = useNavigate();
   const [score, setScore] = useState(0);
-  //const [p,setP]=useState(0)
-  // console.log("marked", data.markedAnswers);
-  // console.log("correct", data.correctAnswers);
   useEffect(() => {
     for (let i = 0; i < data.correctAnswers.length; i++) {
       if (data.markedAnswers[i] === data.correctAnswers[i]) {
