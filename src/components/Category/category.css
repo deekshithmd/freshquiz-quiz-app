@@ -13,6 +13,14 @@
     box-shadow: 0 0 10px black;
     padding: 1rem;
 }
+
+.category-image{
+    min-height:20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .category-card img{
     width: 100%;
     height: 20rem;

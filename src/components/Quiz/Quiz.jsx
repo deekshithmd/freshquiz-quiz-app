@@ -52,18 +52,16 @@ export const Quiz = () => {
           <div className="option-container">
             {currentQuestion.options.map((o, index) => {
               return (
-                <div className="option option-hover" key={index}>
-                  <label className="text-md ">
-                    <input
-                      type="radio"
-                      value={o}
-                      name="option"
-                      className="margin-r"
-                      onClick={(e) => setAnser(e.target.value)}
-                    />
-                    {o}
-                  </label>
-                </div>
+                <label className="option option-hover" key={index}>
+                  <input
+                    type="radio"
+                    value={o}
+                    name="option"
+                    className="margin-r"
+                    onClick={(e) => setAnser(e.target.value)}
+                  />
+                  {o}
+                </label>
               );
             })}
             <div className="button-container">
