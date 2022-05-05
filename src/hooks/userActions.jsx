@@ -1,26 +1,32 @@
-import { getCategories, getQuiz,getSingleQuiz } from "../services";
+import { getCategories, getQuiz, getSingleQuiz } from "../services";
 import { useData } from "../contexts";
 export const useUserActions = () => {
-  const { dispatch } = useData();
+  const { dispatch, setLoading } = useData();
 
   const getQuizData = async () => {
-    const q = await getQuiz();
-    dispatch({ type: "ALL_QUIZ", payload: q.data.quizes });
+    setLoading(true);
+    const quizResponse = await getQuiz();
+    dispatch({ type: "ALL_QUIZ", payload: quizResponse.data.quizes });
+    setLoading(false);
   };
 
   const getQuizCategories = async () => {
-    const c = await getCategories();
-    dispatch({ type: "CATEGORIES", payload: c.data.categories });
+    setLoading(true);
+    const categoryResponse = await getCategories();
+    dispatch({ type: "CATEGORIES", payload: categoryResponse.data.categories });
+    setLoading(false);
   };
 
-  const getSelectedQuiz=async(quizId)=>{
-    const q=await getSingleQuiz({quizId})
-    dispatch({type:"SELECTED_QUIZ",payload:q.data})
-  }
+  const getSelectedQuiz = async (quizId) => {
+    setLoading(true);
+    const singleQuiz = await getSingleQuiz({ quizId });
+    dispatch({ type: "SELECTED_QUIZ", payload: singleQuiz.data });
+    setLoading(false);
+  };
 
   return {
     getQuizData,
     getQuizCategories,
-    getSelectedQuiz
+    getSelectedQuiz,
   };
 };

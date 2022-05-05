@@ -28,7 +28,7 @@ export const quizzes = [
       {
         _id: uuid(),
         question: "What is the meaning of skimming of milk?",
-        options: ["To increase fat in milk", "To reduce fat from milk", "Increase cream in milk", "All of the above"],
+        options: ["To increase fat in milk", "To reduce fat from milk", "Increase creame in milk", "All of the above"],
         answer: "To reduce fat from milk",
       },
       {
@@ -39,7 +39,7 @@ export const quizzes = [
       },
       {
         _id: uuid(),
-        question: "Fat in cow milk in gms",
+        question: "Fat in cow milk in gms...",
         options: ["3.34", "2.35", "4.67", "1.34"],
         answer: "3.34",
       },
