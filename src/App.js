@@ -19,8 +19,8 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/rules" element={<Rules />} />
+        <Route path="/quiz/:categoryId" element={<Quiz />} />
+        <Route path="/rules/:categoryId" element={<Rules />} />
         <Route path="/result" element={<Result />} />
         <Route path="/category" element={<Category />} />
         <Route path="/answers" element={<Answers/>}/>
