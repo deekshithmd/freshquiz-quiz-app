@@ -1,39 +1,20 @@
 .brand-text {
     margin-left: 0;
 }
-
-.burger-menu {
-    display: none;
+.account-data{
+    width: 20%;
 }
 
-#check {
-    display: none;
+.list-inline-item{
+    margin-right: 2rem;
 }
 
 @media screen and (max-width:480px) {
-    .search-item {
-        display: none;
-    }
-
-    .list-inline-item {
-        display: none;
-    }
-
     .brand-text {
         display: none;
     }
 
-    .burger-menu {
-        display: block;
-    }
-
-    #check:checked~.sidebar {
-        display: flex;
-    }
-}
-
-@media screen and (max-width:640px) {
-    .search-item {
-        display: none;
+    .account-data{
+        width: 30%;
     }
 }

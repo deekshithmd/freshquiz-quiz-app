@@ -2,7 +2,8 @@ import "./quiz.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useData } from "../../contexts";
-import { Loader } from "../Loader/Loader";
+import { Loader, Toast } from "..";
+import { useToast } from "../../hooks";
 
 export const Quiz = () => {
   const navigate = useNavigate();
@@ -12,8 +13,9 @@ export const Quiz = () => {
   const [count, setCount] = useState(-1);
   const [currentQuestion, setCurrentQuestion] = useState();
   const [anser, setAnser] = useState("");
-  const [minute, setMinute] = useState(2);
-  const [second, setSecond] = useState(30);
+  const [minute, setMinute] = useState(5);
+  const [second, setSecond] = useState(0);
+  const { successToast } = useToast();
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -135,6 +137,7 @@ export const Quiz = () => {
                           type: "CORRECT_ANSWER",
                           payload: currentQuestion.answer,
                         });
+                        successToast(`Answered ${count + 1} Question`);
                       }}
                     >
                       <i className="fa-solid fa-arrow-right"></i>
@@ -149,6 +152,7 @@ export const Quiz = () => {
                           payload: currentQuestion.answer,
                         });
                         navigate("/result");
+                        successToast("Answered all 5 Questions");
                       }}
                     >
                       Submit

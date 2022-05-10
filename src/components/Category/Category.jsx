@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useData } from "../../contexts";
 import { Loader } from "..";
+import { useToast } from "../../hooks";
 import "./category.css";
 
 export const Category = () => {
   const { data, loading } = useData();
+  const { successToast } = useToast();
 
   return (
     <div className="main">
@@ -18,6 +20,9 @@ export const Category = () => {
                   to={`/rules/${category.id}`}
                   className="category-card link-style-none"
                   key={category._id}
+                  onClick={() =>
+                    successToast(`Selected ${category.categoryName}`)
+                  }
                 >
                   <div className="category-image">
                     <img src={category.image} alt={category.categoryName} />

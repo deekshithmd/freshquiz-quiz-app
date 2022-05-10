@@ -1,13 +1,14 @@
 import "./rules.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useData } from "../../contexts";
-import { useUserActions } from "../../hooks";
+import { useUserActions, useToast } from "../../hooks";
 import { Loader } from "../Loader/Loader";
 export const Rules = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
   const { data, loading } = useData();
   const { getSelectedQuiz } = useUserActions();
+  const { successToast } = useToast();
 
   const loadQuiz = () => {
     data.allQuiz &&
@@ -27,8 +28,8 @@ export const Rules = () => {
             data.categories.map((category) => {
               return (
                 categoryId === category.id && (
-                  <div key={category._id}>
-                    <h2>
+                  <div key={category._id} className="flex">
+                    <h2 className="header">
                       You have choosen to test knowledge on{" "}
                       {category.categoryName}
                       ...
@@ -47,11 +48,17 @@ export const Rules = () => {
                         <li className="list-item">
                           70% score required to clear quiz
                         </li>
+                        <li className="list-item">
+                          5 Minutes to Answer Questions
+                        </li>
                       </ol>
                     </div>
                     <button
                       className="btn btn-solid-primary"
-                      onClick={() => loadQuiz()}
+                      onClick={() => {
+                        loadQuiz();
+                        successToast("Best of Luck...");
+                      }}
                     >
                       Let's begin the Quiz...
                     </button>
