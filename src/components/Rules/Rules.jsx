@@ -2,7 +2,8 @@ import "./rules.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useData } from "../../contexts";
 import { useUserActions, useToast } from "../../hooks";
-import { Loader } from "../Loader/Loader";
+import { Loader } from "..";
+
 export const Rules = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();

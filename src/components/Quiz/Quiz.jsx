@@ -2,7 +2,7 @@ import "./quiz.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useData } from "../../contexts";
-import { Loader, Toast } from "..";
+import { Loader } from "..";
 import { useToast } from "../../hooks";
 
 export const Quiz = () => {

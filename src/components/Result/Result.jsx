@@ -2,6 +2,7 @@ import "./result.css";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../../contexts";
 import { useState, useEffect } from "react";
+
 export const Result = () => {
   const { data } = useData();
   const navigate = useNavigate();
@@ -33,7 +34,9 @@ export const Result = () => {
               Congratulations!!! you have cleared quiz with {percentage}%
             </p>
           ) : (
-            <p className="text-2xl text-bold fail">Aww you have not cleared quiz </p>
+            <p className="text-2xl text-bold fail">
+              Aww you have not cleared quiz{" "}
+            </p>
           )
         ) : null}
         <button

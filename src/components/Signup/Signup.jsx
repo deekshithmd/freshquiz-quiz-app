@@ -14,7 +14,6 @@ export const Signup = () => {
     try {
       event.preventDefault();
       const { firstname, lastname, email, pass } = event.target.elements;
-      console.log()
       const response = await axios.post(`/api/auth/signup`, {
         firstName: firstname.value,
         lastName: lastname.value,

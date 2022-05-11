@@ -3,8 +3,8 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <span className="text-md footer-text text-center">
-        <span className="brand-style">FreshQuiz</span> developed
-        and maintained by Deekshith M D
+        <span className="brand-style">FreshQuiz</span> developed and maintained
+        by Deekshith M D
       </span>
       <ul className="footer-social-icons">
         <li className="list-inline-item">

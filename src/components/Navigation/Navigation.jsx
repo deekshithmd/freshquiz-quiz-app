@@ -1,10 +1,10 @@
 import "./navigation.css";
 import { Link } from "react-router-dom";
 import { useAuth, useTheme } from "../../contexts";
-import { Toast } from "../Toast/Toast";
+import { Toast } from "..";
 export const Navigation = () => {
   const { isLoggedin } = useAuth();
-  const { theme, Toggle } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   return (
     <>
       <nav className="navigation-bar">
@@ -50,7 +50,7 @@ export const Navigation = () => {
                     ? "fas fa-moon nav-icon"
                     : "fas fa-sun nav-icon"
                 }
-                onClick={() => Toggle()}
+                onClick={() => toggleTheme()}
               ></i>
             </span>
           </li>

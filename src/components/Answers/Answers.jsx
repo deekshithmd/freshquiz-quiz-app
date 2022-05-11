@@ -7,6 +7,7 @@ export const Answers = () => {
   const { data } = useData();
   const [incorrectAns, setIncorrectAns] = useState([]);
   let counter = 0;
+  
   useEffect(() => {
     for (let i = 0; i < data.correctAnswers.length; i++) {
       if (data.correctAnswers[i] !== data.markedAnswers[i]) {
@@ -14,6 +15,7 @@ export const Answers = () => {
       }
     }
   }, []);
+
   return (
     <div className="main">
       <h2>Answers</h2>

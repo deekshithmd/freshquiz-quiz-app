@@ -6,7 +6,7 @@ const ThemeContext = createContext(defaultTheme);
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
-  const Toggle = () => {
+  const toggleTheme = () => {
     if (theme === "dark") {
       setTheme("light");
       document.body.classList.remove("dark-theme");
@@ -32,7 +32,7 @@ const ThemeProvider = ({ children }) => {
     })();
   }, []);
   return (
-    <ThemeContext.Provider value={{ theme, Toggle }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
