@@ -4,12 +4,14 @@ import { getTestData, getCredentials } from "../../utils";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../contexts";
+import { useToast } from "../../hooks";
 
 export const Login = () => {
   const { setIsLoggedin, setUserData } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [error, setError] = useState(false);
+  const { successToast, errorToast } = useToast();
 
   const testLogin = async () => {
     try {
@@ -22,9 +24,11 @@ export const Login = () => {
         localStorage.setItem("user", JSON.stringify(response.data.foundUser));
         setUserData(response.data.foundUser);
         setIsLoggedin(true);
+        successToast("Welcome to Freshquiz");
         navigate(location?.state?.from?.pathname || "/");
       }
     } catch (e) {
+      errorToast("Welcome to Freshquiz");
       setError(true);
       navigate("/login");
     }
@@ -45,9 +49,11 @@ export const Login = () => {
         );
         setUserData(response.data.foundUser);
         setIsLoggedin(true);
+        successToast("Welcome to Freshquiz");
         navigate(location?.state?.from?.pathname || "/");
       }
     } catch (e) {
+      errorToast("Login Failed...");
       setError(true);
       navigate("/login");
     }

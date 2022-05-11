@@ -41,7 +41,10 @@ export const Result = () => {
         ) : null}
         <button
           className="btn btn-solid-primary"
-          onClick={() => navigate("/answers")}
+          onClick={() => {
+            setScore(0);
+            navigate("/answers");
+          }}
         >
           Check Answers...
         </button>

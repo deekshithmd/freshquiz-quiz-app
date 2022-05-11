@@ -1,15 +1,18 @@
 import "./profile.css";
 import { useAuth } from "../../contexts";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "../../hooks";
 
 export const Profile = () => {
   const { userData, setIsLoggedin } = useAuth();
   const navigate = useNavigate();
+  const { successToast } = useToast();
 
   const logoutHandler = () => {
     setIsLoggedin(false);
     localStorage.removeItem("login");
     localStorage.removeItem("user");
+    successToast("Succefully Logged Out...");
     navigate("/");
   };
 

@@ -124,7 +124,7 @@ export const Quiz = () => {
                       className="btn btn-solid-primary"
                       onClick={() => setCount((p) => p - 1)}
                     >
-                      <i className="fa-solid fa-arrow-left"></i>
+                      Prev
                     </button>
                   )}
                   {count < quizLength - 1 ? (
@@ -140,7 +140,7 @@ export const Quiz = () => {
                         successToast(`Answered ${count + 1} Question`);
                       }}
                     >
-                      <i className="fa-solid fa-arrow-right"></i>
+                      Next
                     </button>
                   ) : (
                     <button

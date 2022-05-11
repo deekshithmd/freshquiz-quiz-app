@@ -4,10 +4,10 @@ import { useData } from "../../contexts";
 import { useState, useEffect } from "react";
 export const Answers = () => {
   const navigate = useNavigate();
-  const { data } = useData();
+  const { data, dispatch } = useData();
   const [incorrectAns, setIncorrectAns] = useState([]);
   let counter = 0;
-  
+
   useEffect(() => {
     for (let i = 0; i < data.correctAnswers.length; i++) {
       if (data.correctAnswers[i] !== data.markedAnswers[i]) {
@@ -37,9 +37,7 @@ export const Answers = () => {
                         ? "option incorrect"
                         : "option"
                     } ${
-                      data.correctAnswers?.indexOf(o) !== -1
-                        ? "correct"
-                        : null
+                      data.correctAnswers?.indexOf(o) !== -1 ? "correct" : null
                     }`}
                     key={index}
                   >
@@ -53,7 +51,13 @@ export const Answers = () => {
       })}
       <button
         className="btn btn-solid-primary margin-t"
-        onClick={() => navigate("/")}
+        onClick={() => {
+          localStorage.removeItem("singleQuiz");
+          dispatch({ type: "SELECTED_QUIZ", payload: [] });
+          dispatch({ type: "MARKED_ANSWER", payload: [] });
+          dispatch({ type: "CORRECT_ANSWER", payload: [] });
+          navigate("/");
+        }}
       >
         Goto Homepage
       </button>
