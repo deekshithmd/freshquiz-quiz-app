@@ -8,6 +8,7 @@ export const Answers = () => {
   const [incorrectAns, setIncorrectAns] = useState([]);
   let counter = 0;
 
+  //Extract incorrect answers
   useEffect(() => {
     for (let i = 0; i < data.correctAnswers.length; i++) {
       if (data.correctAnswers[i] !== data.markedAnswers[i]) {
@@ -23,7 +24,7 @@ export const Answers = () => {
         return (
           <div className="question-container margin-b" key={q._id}>
             <section className="question-header margin-b">
-              <h4>
+              <h4 className="text-lg">
                 Question: <span className="question-no">{++counter}/5</span>
               </h4>
             </section>

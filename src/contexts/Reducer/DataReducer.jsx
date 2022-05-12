@@ -5,7 +5,7 @@ export const DataReducer = (state, action) => {
     case "CATEGORIES":
       return { ...state, categories: action.payload };
     case "SELECTED_QUIZ":
-      localStorage.setItem("singleQuiz", JSON.stringify(action.payload));
+      sessionStorage.setItem("singleQuiz", JSON.stringify(action.payload));
       return { ...state, selectedQuiz: action.payload };
     case "MARKED_ANSWER":
       return typeof action.payload === "object"

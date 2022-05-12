@@ -12,7 +12,7 @@ export const Quiz = () => {
   const [quizLength, setQuizLength] = useState(0);
   const [count, setCount] = useState(-1);
   const [currentQuestion, setCurrentQuestion] = useState();
-  const [anser, setAnser] = useState("");
+  const [ans, setAns] = useState("");
   const [minute, setMinute] = useState(5);
   const [second, setSecond] = useState(0);
   const { successToast } = useToast();
@@ -37,13 +37,6 @@ export const Quiz = () => {
   });
 
   useEffect(() => {
-    dispatch({
-      type: "SELECTED_QUIZ",
-      payload: JSON.parse(localStorage.getItem("singleQuiz")),
-    });
-  }, []);
-
-  useEffect(() => {
     nextQuestion();
   }, [count]);
 
@@ -56,6 +49,8 @@ export const Quiz = () => {
     dispatch({ type: "CORRECT_ANSWER", payload: [] });
     setCount(-1);
     localStorage.removeItem("singleQuiz");
+    sessionStorage.removeItem("marked_answers");
+    sessionStorage.removeItem("correct_answers");
     navigate("/");
   };
 
@@ -105,7 +100,7 @@ export const Quiz = () => {
                         value={o}
                         name="option"
                         className="margin-r"
-                        onClick={(e) => setAnser(e.target.value)}
+                        onClick={(e) => setAns(e.target.value)}
                       />
                       {o}
                     </label>
@@ -132,7 +127,7 @@ export const Quiz = () => {
                       className="btn btn-solid-primary"
                       onClick={() => {
                         setCount((p) => p + 1);
-                        dispatch({ type: "MARKED_ANSWER", payload: anser });
+                        dispatch({ type: "MARKED_ANSWER", payload: ans });
                         dispatch({
                           type: "CORRECT_ANSWER",
                           payload: currentQuestion.answer,
@@ -146,7 +141,7 @@ export const Quiz = () => {
                     <button
                       className="btn btn-solid-primary"
                       onClick={() => {
-                        dispatch({ type: "MARKED_ANSWER", payload: anser });
+                        dispatch({ type: "MARKED_ANSWER", payload: ans });
                         dispatch({
                           type: "CORRECT_ANSWER",
                           payload: currentQuestion.answer,

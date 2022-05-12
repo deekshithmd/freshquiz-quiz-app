@@ -8,6 +8,11 @@ export const Result = () => {
   const navigate = useNavigate();
   const [score, setScore] = useState(0);
   let percentage = 0;
+  sessionStorage.setItem("marked_answers", JSON.stringify(data.markedAnswers));
+  sessionStorage.setItem(
+    "correct_answers",
+    JSON.stringify(data.correctAnswers)
+  );
 
   useEffect(() => {
     for (let i = 0; i < data.correctAnswers.length; i++) {

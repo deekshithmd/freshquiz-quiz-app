@@ -21,6 +21,19 @@ const DataProvider = ({ children }) => {
       dispatch({ type: "ALL_QUIZ", payload: q.data.quizes });
       const c = await getCategories();
       dispatch({ type: "CATEGORIES", payload: c.data.categories });
+      const single = JSON.parse(sessionStorage.getItem("singleQuiz"));
+      dispatch({
+        type: "SELECTED_QUIZ",
+        payload: single,
+      });
+      const marked = JSON.parse(sessionStorage.getItem("marked_answers"));
+      const correct = JSON.parse(sessionStorage.getItem("correct_answers"));
+      marked?.map((ans) => {
+        dispatch({ type: "MARKED_ANSWER", payload: ans });
+      });
+      correct?.map((ans) => {
+        dispatch({ type: "CORRECT_ANSWER", payload: ans });
+      });
       setLoading(false);
     })();
   }, []);

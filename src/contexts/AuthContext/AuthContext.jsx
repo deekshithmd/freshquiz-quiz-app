@@ -5,6 +5,7 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [isLoggedin, setIsLoggedin] = useState(false);
   const [userData, setUserData] = useState();
+ 
 
   useEffect(() => {
     (() => {
@@ -14,7 +15,7 @@ const AuthProvider = ({ children }) => {
       }
     })();
   }, []);
-  
+
   return (
     <AuthContext.Provider
       value={{ isLoggedin, setIsLoggedin, userData, setUserData }}
