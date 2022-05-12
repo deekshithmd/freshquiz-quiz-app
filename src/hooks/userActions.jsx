@@ -1,5 +1,5 @@
-import { getCategories, getQuiz, getSingleQuiz } from "../services";
-import { useData } from "../contexts";
+import { getCategories, getQuiz, getSingleQuiz } from "services";
+import { useData } from "contexts";
 export const useUserActions = () => {
   const { dispatch, setLoading } = useData();
 

@@ -1,7 +1,7 @@
 import "./navigation.css";
 import { Link } from "react-router-dom";
-import { useAuth, useTheme } from "../../contexts";
-import { Toast } from "..";
+import { useAuth, useTheme } from "contexts";
+import { Toast } from "components";
 export const Navigation = () => {
   const { isLoggedin } = useAuth();
   const { theme, toggleTheme } = useTheme();

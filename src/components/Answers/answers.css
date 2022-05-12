@@ -3,6 +3,11 @@
     --incorrect-color: rgb(250, 53, 53);
 }
 
+.answer-heading{
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
 .correct {
     background-color: var(--correct-color);
     color: var(--secondary-text-color);

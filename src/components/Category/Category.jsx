@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { useData } from "../../contexts";
-import { Loader } from "..";
-import { useToast } from "../../hooks";
+import { useData } from "contexts";
+import { Loader } from "components";
+import { useToast } from "hooks";
 import "./category.css";
 
 export const Category = () => {

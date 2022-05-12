@@ -8,15 +8,25 @@ export const DataReducer = (state, action) => {
       localStorage.setItem("singleQuiz", JSON.stringify(action.payload));
       return { ...state, selectedQuiz: action.payload };
     case "MARKED_ANSWER":
-      return {
-        ...state,
-        markedAnswers: [...state.markedAnswers, action.payload],
-      };
+      return typeof action.payload === "object"
+        ? {
+            ...state,
+            markedAnswers: [],
+          }
+        : {
+            ...state,
+            markedAnswers: [...state.markedAnswers, action.payload],
+          };
     case "CORRECT_ANSWER":
-      return {
-        ...state,
-        correctAnswers: [...state.correctAnswers, action.payload],
-      };
+      return typeof action.payload === "object"
+        ? {
+            ...state,
+            correctAnswers: [],
+          }
+        : {
+            ...state,
+            correctAnswers: [...state.correctAnswers, action.payload],
+          };
     default:
       return state;
   }

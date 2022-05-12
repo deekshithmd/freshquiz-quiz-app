@@ -1,10 +1,10 @@
 import "./answers.css";
 import { useNavigate } from "react-router-dom";
-import { useData } from "../../contexts";
+import { useData } from "contexts";
 import { useState, useEffect } from "react";
 export const Answers = () => {
   const navigate = useNavigate();
-  const { data, dispatch } = useData();
+  const { data } = useData();
   const [incorrectAns, setIncorrectAns] = useState([]);
   let counter = 0;
 
@@ -18,7 +18,7 @@ export const Answers = () => {
 
   return (
     <div className="main">
-      <h2>Answers</h2>
+      <h2 className="answer-heading">Answers for your quiz Questions</h2>
       {data.selectedQuiz?.quiz?.mcqs?.map((q) => {
         return (
           <div className="question-container margin-b" key={q._id}>
@@ -52,10 +52,6 @@ export const Answers = () => {
       <button
         className="btn btn-solid-primary margin-t"
         onClick={() => {
-          localStorage.removeItem("singleQuiz");
-          dispatch({ type: "SELECTED_QUIZ", payload: [] });
-          dispatch({ type: "MARKED_ANSWER", payload: [] });
-          dispatch({ type: "CORRECT_ANSWER", payload: [] });
           navigate("/");
         }}
       >

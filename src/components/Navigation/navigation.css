@@ -1,12 +1,17 @@
 .brand-text {
     margin-left: 0;
 }
-.account-data{
+
+.account-data {
     width: 20%;
 }
 
-.list-inline-item{
+.list-inline-item {
     margin-right: 2rem;
+}
+
+.nav-icon-link i {
+    font-size: 3rem;
 }
 
 @media screen and (max-width:480px) {
@@ -14,7 +19,18 @@
         display: none;
     }
 
-    .account-data{
-        width: 30%;
+    .account-data {
+        width: 35%;
+        padding-right: 2rem;
+    }
+
+    .nav-icon-link i {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .nav-icon-link i {
+        font-size: 4rem;
     }
 }

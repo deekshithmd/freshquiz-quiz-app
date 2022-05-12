@@ -14,7 +14,7 @@ import {
   Signup,
   RequiresAuth,
   Profile,
-} from "../src/components";
+} from "components";
 //import Mockman from "mockman-js";
 
 function App() {

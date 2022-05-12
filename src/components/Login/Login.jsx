@@ -1,10 +1,10 @@
 import "../Signup/authentication.css";
 import axios from "axios";
-import { getTestData, getCredentials } from "../../utils";
+import { getTestData, getCredentials } from "utils";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { useAuth } from "../../contexts";
-import { useToast } from "../../hooks";
+import { useAuth } from "contexts";
+import { useToast } from "hooks";
 
 export const Login = () => {
   const { setIsLoggedin, setUserData } = useAuth();

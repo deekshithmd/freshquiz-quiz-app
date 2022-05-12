@@ -1,9 +1,9 @@
 import "./quiz.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useData } from "../../contexts";
-import { Loader } from "..";
-import { useToast } from "../../hooks";
+import { useData } from "contexts";
+import { Loader } from "components";
+import { useToast } from "hooks";
 
 export const Quiz = () => {
   const navigate = useNavigate();

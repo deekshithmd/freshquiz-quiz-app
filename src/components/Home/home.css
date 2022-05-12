@@ -1,4 +1,4 @@
-.main{
+.main {
     min-height: 85vh;
     width: 100%;
     display: flex;
@@ -8,20 +8,31 @@
     flex-wrap: wrap;
 }
 
-.heading{
+.heading {
     font-family: 'Oleo Script', cursive;
     font-size: 7rem;
+    text-align: center;
     color: var(--primary-color)
 }
 
-.sub-heading{
-    font-size: 3rem;
+.sub-heading {
+    font-size: 3.5rem;
+    font-weight: 550;
+    width: 75%;
+    text-align: center;
 }
 
-.list{
+.list {
     list-style-position: inside;
 }
 
-.l-h-0{
+.l-h-0 {
     line-height: 0;
+}
+
+@media screen and (max-width:480px) {
+
+    .start-btn {
+        margin-top: 3rem;
+    }
 }

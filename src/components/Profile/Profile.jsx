@@ -1,7 +1,7 @@
 import "./profile.css";
-import { useAuth } from "../../contexts";
+import { useAuth } from "contexts";
 import { useNavigate } from "react-router-dom";
-import { useToast } from "../../hooks";
+import { useToast } from "hooks";
 
 export const Profile = () => {
   const { userData, setIsLoggedin } = useAuth();
