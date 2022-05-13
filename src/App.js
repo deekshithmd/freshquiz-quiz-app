@@ -9,8 +9,12 @@ import {
   Rules,
   Category,
   Error,
-  Answers
-} from "../src/components";
+  Answers,
+  Login,
+  Signup,
+  RequiresAuth,
+  Profile,
+} from "components";
 //import Mockman from "mockman-js";
 
 function App() {
@@ -19,12 +23,43 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/quiz/:categoryId" element={<Quiz />} />
-        <Route path="/rules/:categoryId" element={<Rules />} />
-        <Route path="/result" element={<Result />} />
         <Route path="/category" element={<Category />} />
-        <Route path="/answers" element={<Answers/>}/>
-        <Route path="*" element={<Error/>}/>
+        <Route
+          path="/rules/:categoryId"
+          element={
+            <RequiresAuth>
+              <Rules />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/quiz/:categoryId"
+          element={
+            <RequiresAuth>
+              <Quiz />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/result"
+          element={
+            <RequiresAuth>
+              <Result />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/answers"
+          element={
+            <RequiresAuth>
+              <Answers />
+            </RequiresAuth>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </div>

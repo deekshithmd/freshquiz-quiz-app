@@ -1,11 +1,21 @@
-.correct{
-    background-color: var(--success-text-color);
+:root {
+    --correct-color: rgb(25, 134, 21);
+    --incorrect-color: rgb(250, 53, 53);
 }
 
-.incorrect{
-    background-color: var(--red-background);
+.answer-heading{
+    font-size: 3rem;
+    text-decoration: underline;
 }
 
-.pass{
-    color: var(--success-text-color);
+.correct {
+    background-color: var(--correct-color);
+    color: var(--secondary-text-color);
+    border: 1px solid var(--border-white);
+}
+
+.incorrect {
+    background-color: var(--incorrect-color);
+    color: var(--secondary-text-color);
+    border: 1px solid var(--border-white);
 }

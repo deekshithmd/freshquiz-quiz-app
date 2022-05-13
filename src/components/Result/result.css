@@ -1,5 +1,21 @@
-.result{
+.result {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.result-heading{
+    font-size: 4rem;
+}
+
+.result-score{
+    font-size: 3.5rem;
+}
+
+.pass {
+    color: var(--success-text-color);
+}
+
+.fail {
+    color: var(--danger-text-color);
 }

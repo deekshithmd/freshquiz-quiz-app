@@ -2,38 +2,35 @@
     margin-left: 0;
 }
 
-.burger-menu {
-    display: none;
+.account-data {
+    width: 20%;
 }
 
-#check {
-    display: none;
+.list-inline-item {
+    margin-right: 2rem;
+}
+
+.nav-icon-link i {
+    font-size: 3rem;
 }
 
 @media screen and (max-width:480px) {
-    .search-item {
-        display: none;
-    }
-
-    .list-inline-item {
-        display: none;
-    }
-
     .brand-text {
         display: none;
     }
 
-    .burger-menu {
-        display: block;
+    .account-data {
+        width: 35%;
+        padding-right: 2rem;
     }
 
-    #check:checked~.sidebar {
-        display: flex;
+    .nav-icon-link i {
+        font-size: 3.5rem;
     }
 }
 
-@media screen and (max-width:640px) {
-    .search-item {
-        display: none;
+@media screen and (max-width:768px) {
+    .nav-icon-link i {
+        font-size: 4rem;
     }
 }
