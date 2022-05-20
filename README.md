@@ -13,6 +13,10 @@
  ## About
  FreshQuiz is a quiz app containing agriculture related questions which can be used to test knowledge on different agriculture practices. This quiz app provides questions based on few categories featured in the app.
  
+ ## Tech Stack
+   Client Side: React, Context API, React Router, [FreshUI](https://fresh-ui.netlify.app) <br>
+   Server Side: Mockbee ( Mock Backend )
+ 
  ## Features
  There are different features available in different sections of the app
  
