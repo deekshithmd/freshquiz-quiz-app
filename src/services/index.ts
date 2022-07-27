@@ -3,6 +3,6 @@ import {
   getSingleQuiz,
   getCategories,
   getSingleCategory,
-} from "./services";
+} from "services";
 
 export { getQuiz, getSingleQuiz, getCategories, getSingleCategory };
