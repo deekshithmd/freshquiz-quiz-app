@@ -1,5 +1,5 @@
 import "./loader.css";
-export const Loader = ({ text }) => {
+export const Loader = ({ text }: { text: string }) => {
   return (
     <div className="loader">
       <h1>{text}</h1>

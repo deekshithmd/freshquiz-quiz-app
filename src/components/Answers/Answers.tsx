@@ -2,11 +2,13 @@ import "./answers.css";
 import { useNavigate } from "react-router-dom";
 import { useData } from "contexts";
 import { useState, useEffect } from "react";
+import { questionType, answerType } from "types/Quiz.type";
+
 export const Answers = () => {
   const navigate = useNavigate();
   const { data } = useData();
   const [incorrectAns, setIncorrectAns] = useState([]);
-  let counter = 0;
+  let counter: number = 0;
 
   //Extract incorrect answers
   useEffect(() => {
@@ -20,7 +22,7 @@ export const Answers = () => {
   return (
     <div className="main">
       <h2 className="answer-heading">Answers for your quiz Questions</h2>
-      {data.selectedQuiz?.quiz?.mcqs?.map((q) => {
+      {data?.selectedQuiz?.quiz?.mcqs?.map((q: questionType) => {
         return (
           <div className="question-container margin-b" key={q._id}>
             <section className="question-header margin-b">
@@ -30,19 +32,21 @@ export const Answers = () => {
             </section>
             <p className="text-lg">{q.question}</p>
             <div className="option-container">
-              {q?.options?.map((o, index) => {
+              {q?.options?.map((option: string, index: number) => {
                 return (
                   <div
                     className={`${
-                      incorrectAns.indexOf(o) !== -1
+                      incorrectAns?.indexOf(option) !== -1
                         ? "option incorrect"
                         : "option"
                     } ${
-                      data.correctAnswers?.indexOf(o) !== -1 ? "correct" : null
+                      data?.correctAnswers?.indexOf(option) !== -1
+                        ? "correct"
+                        : null
                     }`}
                     key={index}
                   >
-                    <label className="text-md">{o}</label>
+                    <label className="text-md">{option}</label>
                   </div>
                 );
               })}

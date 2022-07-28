@@ -23,13 +23,13 @@ export const Profile = () => {
         <div className="profile-info">
           <span className="field-heading text-lg text-bold">Full Name </span>
           <span className="field-info text-md text-bold">
-            : {`${userData.firstName} ${userData.lastName}`}
+            : {`${userData?.firstName} ${userData?.lastName}`}
           </span>
         </div>
         <div className="profile-info">
           <span className="field-heading text-lg text-bold">Email </span>
           <span className="field-info text-md text-bold">
-            : {userData.email}
+            : {userData?.email}
           </span>
         </div>
         <button

@@ -1,17 +1,40 @@
-import { useContext, createContext, useState, useEffect } from "react";
+import {
+  useContext,
+  createContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
-const AuthContext = createContext();
+type userDataType = {
+  _id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+type authContextType = {
+  isLoggedin: boolean;
+  setIsLoggedin: React.Dispatch<React.SetStateAction<boolean>>;
+  userData: undefined | userDataType;
+  setUserData: React.Dispatch<React.SetStateAction<undefined>>;
+};
 
-const AuthProvider = ({ children }) => {
+const AuthContext = createContext<authContextType>({
+  isLoggedin: false,
+  setIsLoggedin: () => null,
+  userData: { _id: 0, firstName: "", lastName: "", email: "" },
+  setUserData: () => null,
+});
+
+const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedin, setIsLoggedin] = useState(false);
   const [userData, setUserData] = useState();
- 
 
   useEffect(() => {
     (() => {
       if (localStorage.getItem("login")) {
         setIsLoggedin(true);
-        setUserData(JSON.parse(localStorage.getItem("user")));
+        setUserData(JSON.parse(localStorage.getItem("user") || "{}"));
       }
     })();
   }, []);

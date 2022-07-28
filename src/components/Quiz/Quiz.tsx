@@ -41,7 +41,7 @@ export const Quiz = () => {
   }, [count]);
 
   const nextQuestion = () => {
-    setCurrentQuestion(data.selectedQuiz?.quiz?.mcqs[count]);
+    setCurrentQuestion(data?.selectedQuiz?.quiz?.mcqs[count]);
   };
 
   const handleQuit = () => {
@@ -90,7 +90,7 @@ export const Quiz = () => {
                   </button>
                 </h4>
               </section>
-              <p className="text-lg text-bold">{currentQuestion.question}</p>
+              <p className="text-lg text-bold">{currentQuestion?.question}</p>
               <div className="option-container">
                 {currentQuestion.options.map((o, index) => {
                   return (
@@ -130,7 +130,7 @@ export const Quiz = () => {
                         dispatch({ type: "MARKED_ANSWER", payload: ans });
                         dispatch({
                           type: "CORRECT_ANSWER",
-                          payload: currentQuestion.answer,
+                          payload: currentQuestion?.answer,
                         });
                         successToast(`Answered ${count + 1} Question`);
                       }}

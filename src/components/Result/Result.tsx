@@ -7,7 +7,7 @@ export const Result = () => {
   const { data } = useData();
   const navigate = useNavigate();
   const [score, setScore] = useState(0);
-  let percentage = 0;
+  let percentage: number = 0;
   sessionStorage.setItem("marked_answers", JSON.stringify(data.markedAnswers));
   sessionStorage.setItem(
     "correct_answers",

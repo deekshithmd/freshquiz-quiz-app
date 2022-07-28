@@ -1,4 +1,10 @@
-export const DataReducer = (state, action) => {
+import React from "react";
+import { actionType, initialStateType } from "./DataReducer.type";
+
+export const DataReducer: React.Reducer<initialStateType, actionType> = (
+  state,
+  action
+) => {
   switch (action.type) {
     case "ALL_QUIZ":
       return { ...state, allQuiz: action.payload };
