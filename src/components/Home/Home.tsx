@@ -5,6 +5,7 @@ export const Home = () => {
   const { dispatch } = useData();
 
   //Clearing all previous data
+
   useEffect(() => {
     (() => {
       sessionStorage.removeItem("singleQuiz");

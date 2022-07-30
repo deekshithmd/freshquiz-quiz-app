@@ -9,10 +9,14 @@ export const initialState = {
   correctAnswers: [],
 };
 
+type selectedType = {
+  quiz: quizType;
+};
+
 export type initialStateType = {
   allQuiz: quizType[];
   categories: categoryType[];
-  selectedQuiz: quizType[];
+  selectedQuiz: selectedType;
   markedAnswers: answerType[];
   correctAnswers: answerType[];
 };
