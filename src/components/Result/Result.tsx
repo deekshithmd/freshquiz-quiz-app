@@ -7,7 +7,6 @@ export const Result = () => {
   const { data } = useData();
   const navigate = useNavigate();
   const [score, setScore] = useState(0);
-  let percentage: number = 0;
   sessionStorage.setItem("marked_answers", JSON.stringify(data.markedAnswers));
   sessionStorage.setItem(
     "correct_answers",
@@ -22,9 +21,10 @@ export const Result = () => {
     }
   }, []);
 
-  percentage = ((score / data.selectedQuiz?.quiz?.mcqs.length) * 100).toFixed(
-    2
-  );
+  let percentage = (
+    (score / data.selectedQuiz?.quiz?.mcqs.length) *
+    100
+  ).toFixed(2);
 
   return (
     <div className="main">
@@ -35,7 +35,7 @@ export const Result = () => {
           {data.selectedQuiz?.quiz?.mcqs.length * 5}
         </h3>
         {percentage ? (
-          percentage > 70 ? (
+          Number(percentage) > 70 ? (
             <p className="text-2xl text-bold pass">
               Congratulations!!! you have cleared quiz with {percentage}%
             </p>

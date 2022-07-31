@@ -6,6 +6,15 @@ import { useState } from "react";
 import { useAuth } from "contexts";
 import { useToast } from "hooks";
 
+// interface FormElements extends HTMLFormControlsCollection {
+//   email: HTMLInputElement;
+//   password: HTMLInputElement;
+// }
+// interface LoginFormElement extends HTMLFormElement {
+//   readonly elements: FormElements;
+// }
+// React.FormEvent<LoginFormElement>
+
 export const Login = () => {
   const { setIsLoggedin, setUserData } = useAuth();
   const navigate = useNavigate();
@@ -25,7 +34,8 @@ export const Login = () => {
         setUserData(response.data.foundUser);
         setIsLoggedin(true);
         successToast("Welcome to Freshquiz");
-        navigate(location?.state?.from?.pathname || "/");
+        // location?.state?.from?.pathname
+        navigate("/");
       }
     } catch (e) {
       errorToast("Welcome to Freshquiz");
@@ -34,7 +44,7 @@ export const Login = () => {
     }
   };
 
-  const handleLogin = async (event: React.FormEvent<HTMLInputElement>) => {
+  const handleLogin = async (event: any) => {
     try {
       event.preventDefault();
       const { email, password } = event.target.elements;
@@ -50,7 +60,8 @@ export const Login = () => {
         setUserData(response.data.foundUser);
         setIsLoggedin(true);
         successToast("Welcome to Freshquiz");
-        navigate(location?.state?.from?.pathname || "/");
+        // location?.state?.from?.pathname
+        navigate("/");
       }
     } catch (e) {
       errorToast("Login Failed...");

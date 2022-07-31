@@ -7,7 +7,7 @@ import { questionType, answerType } from "types/Quiz.type";
 export const Answers = () => {
   const navigate = useNavigate();
   const { data } = useData();
-  const [incorrectAns, setIncorrectAns] = useState([]);
+  const [incorrectAns, setIncorrectAns] = useState<answerType[]>([]);
   let counter: number = 0;
 
   //Extract incorrect answers

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useData } from "contexts";
 import { Loader } from "components";
 import { useToast } from "hooks";
+import { questionType } from "types/Quiz.type";
 
 export const Quiz = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export const Quiz = () => {
   const { data, dispatch, loading } = useData();
   const [quizLength, setQuizLength] = useState(0);
   const [count, setCount] = useState(-1);
-  const [currentQuestion, setCurrentQuestion] = useState();
+  const [currentQuestion, setCurrentQuestion] = useState<questionType>();
   const [ans, setAns] = useState("");
   const [minute, setMinute] = useState(5);
   const [second, setSecond] = useState(0);
@@ -100,7 +101,7 @@ export const Quiz = () => {
                         value={o}
                         name="option"
                         className="margin-r"
-                        onClick={(e) => setAns(e.target.value)}
+                        onClick={(e: any) => setAns(e.target.value)}
                       />
                       {o}
                     </label>
